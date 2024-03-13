@@ -1,0 +1,42 @@
+:root {
+  --blue: #367bb6;
+}
+
+.header-text {
+  color: red;
+  font-size: 2em;
+}
+
+.bg-blue {
+  background-color: var(--blue);
+  color: white;
+}
+
+.border-blue {
+  border-color: var(--blue) !important;
+
+}
+
+.full-width {
+  width: 100%;
+  text-align: left;
+
+}
+
+#schedule-card {
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.schedule-date {
+  color: #5A5A5A;
+  width: 100%;
+}
+
+#myRange {
+  width: 100%;
+}
+
+.width-100 {
+  width: 100%;
+}
