@@ -1,12 +1,19 @@
+.well {
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.075);
+  padding: 1.25rem;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
 :root {
   --blue: #367bb6;
 }
-
 .header-text {
   color: red;
   font-size: 2em;
 }
-
 .bg-blue {
   background-color: var(--blue);
   color: white;
@@ -14,26 +21,22 @@
 
 .border-blue {
   border-color: var(--blue) !important;
-
 }
 
 .full-width {
   width: 100%;
   text-align: left;
-
 }
 
-#schedule-card {
+#schedule-option {
   padding-top: 1%;
   padding-bottom: 1%;
 }
-
 .schedule-date {
-  color: #5A5A5A;
+  color: #5a5a5a;
   width: 100%;
 }
-
-#myRange {
+#myRangeNum {
   width: 100%;
 }
 
