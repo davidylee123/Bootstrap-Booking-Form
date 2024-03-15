@@ -1,19 +1,19 @@
 $(document).ready(function () {
   $(".schedule").change(function () {
     var adults = $("#scheduleOption").val();
-    var a = moment($("#checkin").val());
-    var b = moment($("#checkout").val());
-    if (!isNaN(a.diff(b, "days"))) {
-      var days = b.diff(a, "days");
-      $("#daysdisplay").val(days);
-      var cost = days * adults * 150;
+    var begin = moment($("#checkin").val());
+    var end = moment($("#checkout").val());
+    if (!isNaN(begin.diff(end, "days"))) {
+      var numDays = end.diff(begin, "days");
+      $("#daysdisplay").val(numDays);
+      var cost = numDays * adults * 150;
       $("#costNum").val(cost);
     }
   });
 
   $(":submit").click(function () {
     var flag = true;
-    const info = [
+    const input = [
       $("#userName"),
       $("#firstname"),
       $("#lastname"),
@@ -22,12 +22,12 @@ $(document).ready(function () {
       $("#emailAd")
     ];
 
-    info.forEach(function (currField) {
-      if (currField.val() == "") {
-        currField.addClass("is-invalid");
+    input.forEach(function (currData) {
+      if (currData.val() == "") {
+        currData.addClass("is-invalid");
         flag = false;
       } else {
-        currField.removeClass("is-invalid");
+        currData.removeClass("is-invalid");
       }
     });
 
@@ -46,8 +46,8 @@ $(document).ready(function () {
   });
 });
 
-function reset1() {
-  const fields = [
+function reset() {
+  const data = [
     $("#userName"),
     $("#firstname"),
     $("#lastname"),
@@ -61,8 +61,8 @@ function reset1() {
     $("#checkout")
   ];
 
-  fields.forEach(function (currField) {
-    currField.val("");
+  data.forEach(function (currData) {
+    currData.val("");
   });
   $("#scheduleOption").val("1");
   $("#myRangeNum").val("5");
