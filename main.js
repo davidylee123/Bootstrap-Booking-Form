@@ -1,27 +1,26 @@
 $(document).ready(function () {
-
   $(".schedule").change(function () {
-    var adults = $("#schedule-card").val();
-    var a = moment($("#checkIn").val());
-    var b = moment($("#checkOut").val());
-    if (!isNaN(a.diff(b, 'days'))) {
-      var days = b.diff(a, 'days');
-      $("#daysDisplay").val(days);
+    var adults = $("#schedule-option").val();
+    var a = moment($("#checkin").val());
+    var b = moment($("#checkout").val());
+    if (!isNaN(a.diff(b, "days"))) {
+      var days = b.diff(a, "days");
+      $("#daysdisplay").val(days);
       var cost = days * adults * 150;
-      $("#cost").val(cost);
+      $("#costNum").val(cost);
     }
-
   });
 
-
-  $(":submit").click(function () { // he wants us to use the onclick() html thing
+  $(":submit").click(function () {
     var flag = true;
-    const info = [$("#username"),
-    $("#firstName"),
-    $("#lastName"),
-    $("#phone"),
-    $("#fax"),
-    $("#email")];
+    const info = [
+      $("#userName"),
+      $("#firstname"),
+      $("#lastname"),
+      $("#phoneNum"),
+      $("#faxNum"),
+      $("#emailAd")
+    ];
 
     info.forEach(function (currField) {
       if (currField.val() == "") {
@@ -32,8 +31,8 @@ $(document).ready(function () {
       }
     });
 
-    var cost = parseInt($("#cost").val());
-    if ($("#cost").val() == "") {
+    var cost = parseInt($("#costNum").val());
+    if ($("#costNum").val() == "") {
       toastr.error("Cost not calculated!");
       flag = false;
     }
@@ -48,24 +47,25 @@ $(document).ready(function () {
 });
 
 function reset1() {
-  const fields = [$("#username"),
-  $("#firstName"),
-  $("#lastName"),
-  $("#phone"),
-  $("#fax"),
-  $("#email"),
-  $("#daysDisplay"),
-  $("#cost"),
-  $("#message"),
-  $("#checkIn"),
-  $("#checkOut"),
-  $("#cost"),
-  $("#daysDisplay")];
+  const fields = [
+    $("#userName"),
+    $("#firstname"),
+    $("#lastname"),
+    $("#phoneNum"),
+    $("#faxNum"),
+    $("#emailAd"),
+    $("#daysdisplay"),
+    $("#costNum"),
+    $("#messageCount"),
+    $("#checkin"),
+    $("#checkout")
+  ];
+
   fields.forEach(function (currField) {
     currField.val("");
   });
-  $("#schedule-card").val("1");
-  $("#myRange").val("5");
-  $("#priority-high").prop("checked", true);
-  toastr.success("Successfully cleared");
-};
+  $("#schedule-option").val("1");
+  $("#myRangeNum").val("5");
+  $("#priorityNum-high").prop("checked", true);
+  toastr.info("Successfully cleared");
+}
