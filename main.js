@@ -1,6 +1,6 @@
 $(document).ready(function () {
   $(".schedule").change(function () {
-    var adults = $("#schedule-option").val();
+    var adults = $("#scheduleOption").val();
     var a = moment($("#checkin").val());
     var b = moment($("#checkout").val());
     if (!isNaN(a.diff(b, "days"))) {
@@ -64,7 +64,7 @@ function reset1() {
   fields.forEach(function (currField) {
     currField.val("");
   });
-  $("#schedule-option").val("1");
+  $("#scheduleOption").val("1");
   $("#myRangeNum").val("5");
   $("#priorityNum-high").prop("checked", true);
   toastr.info("Successfully cleared");
